@@ -1,0 +1,10 @@
+# Ignore large AI model files
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+# Ignore system files
+.DS_Store
+assets/models/*.engine
+assets/models/*.onnx
+__pycache__/

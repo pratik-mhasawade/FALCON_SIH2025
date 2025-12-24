@@ -1,0 +1,23 @@
+[Unit]
+Description=FALCON Edge-AI Drone Service
+After=multi-user.target
+# Waits for hardware to be ready before starting
+
+[Service]
+Type=simple
+User=falcon
+# ^ CHANGE THIS to your Jetson username (e.g., 'nvidia' or 'root')
+
+# The script to run
+ExecStart=/home/falcon/FALCON_SIH2025/scripts/auto_falcon.sh
+
+# Auto-restart if it crashes (Critical for drones!)
+Restart=always
+RestartSec=10
+
+# Logging settings
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
